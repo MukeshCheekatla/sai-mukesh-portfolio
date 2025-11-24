@@ -1,6 +1,6 @@
 // Image paths (from /assets folder)
-const notesImg = '/src/assets/notes.png';
-const weatherImg = '/src/assets/weather.png';
+import notesImg from "../assets/notes.png";
+import weatherImg from "../assets/weather.png";
 
 export const RESUME_DATA = {
   name: "Sai Mukesh Cheekatla",
