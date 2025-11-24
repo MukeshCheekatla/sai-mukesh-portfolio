@@ -52,7 +52,7 @@ const Navbar = () => {
             </div>
             <div className="overflow-hidden">
               <h1 className="font-bold text-white tracking-tight font-mono truncate">DEV.PORTFOLIO</h1>
-              <p className="text-xs text-secondary font-mono">v2.0.25</p>
+              <p className="text-xs text-secondary font-mono">v21.3.02</p>
             </div>
           </div>
 
