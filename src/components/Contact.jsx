@@ -64,8 +64,8 @@ const Contact = () => {
             <h2 className="text-3xl font-bold text-white mt-2 mb-6">Get In Touch</h2>
 
             <p className="text-slate-400 mb-8">
-              Currently looking for new opportunities. Whether you have a question or just want to say hi,
-              I'll try my best to get back to you!
+              I am currently open to new opportunities. Whether you have a question or just want to say hi,
+              I will do my best to get back to you.
             </p>
 
             <div className="font-mono text-sm space-y-2 overflow-x-auto">
@@ -76,7 +76,7 @@ const Contact = () => {
 
               <p className="text-secondary whitespace-nowrap">
                 <span className="text-primary">const</span> location ={' '}
-                <span className="text-white">"India"</span>;
+                <span className="text-white">"{RESUME_DATA.location}"</span>;
               </p>
             </div>
           </div>
@@ -92,10 +92,10 @@ const Contact = () => {
 
               {/* Name */}
               <div>
-                <div className="flex justify-between items-end mb-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-1 mb-1">
                   <label className="text-xs font-mono text-primary"> {'>'} NAME</label>
                   {errors.name && (
-                    <span className="text-red-500 text-[10px] font-mono flex items-center gap-1">
+                    <span className="text-red-500 text-[10px] font-mono flex items-center gap-1 break-words">
                       <AlertCircle size={10} /> {errors.name}
                     </span>
                   )}
@@ -114,10 +114,10 @@ const Contact = () => {
 
               {/* Email */}
               <div>
-                <div className="flex justify-between items-end mb-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-1 mb-1">
                   <label className="text-xs font-mono text-primary">{'>'} EMAIL</label>
                   {errors.email && (
-                    <span className="text-red-500 text-[10px] font-mono flex items-center gap-1">
+                    <span className="text-red-500 text-[10px] font-mono flex items-center gap-1 break-words">
                       <AlertCircle size={10} /> {errors.email}
                     </span>
                   )}
@@ -136,10 +136,10 @@ const Contact = () => {
 
               {/* Message */}
               <div>
-                <div className="flex justify-between items-end mb-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-1 mb-1">
                   <label className="text-xs font-mono text-primary">{'>'} MESSAGE</label>
                   {errors.message && (
-                    <span className="text-red-500 text-[10px] font-mono flex items-center gap-1">
+                    <span className="text-red-500 text-[10px] font-mono flex items-center gap-1 break-words">
                       <AlertCircle size={10} /> {errors.message}
                     </span>
                   )}

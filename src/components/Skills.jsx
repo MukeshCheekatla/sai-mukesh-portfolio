@@ -20,7 +20,7 @@ const Skills = () => {
               <div className="absolute -left-4 top-0 bottom-0 w-1 bg-primary scale-y-0 group-hover:scale-y-100 transition-transform origin-top" />
 
               {/* Category Title */}
-              <h3 className="text-xl font-mono text-white mb-4 flex items-center">
+              <h3 className="text-base sm:text-xl font-mono text-white mb-4 flex items-center flex-wrap break-all">
                 <span className="text-primary mr-2">const</span>
                 {category.category.replace(/ & /g, '_').replace(/ /g, '')}
                 <span className="text-primary ml-2">=</span>

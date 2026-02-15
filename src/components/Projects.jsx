@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import { PROJECTS, RESUME_DATA } from '../data/constants.js';
 
 const Projects = () => {
-  // Track image load errors by project index (JS version)
-  const [imageErrors, setImageErrors] = useState({});
-
-  const handleImageError = (index) => {
-    setImageErrors((prev) => ({ ...prev, [index]: true }));
-  };
-
   return (
     <section id="projects" className="scroll-mt-0">
       <div className="border-t border-border pt-8">
@@ -35,87 +28,56 @@ const Projects = () => {
 
         {/* Project Cards */}
         <div className="grid md:grid-cols-2 gap-8">
-          {PROJECTS.map((project, index) => (
+          {PROJECTS.map((project) => (
             <div
-              key={index}
-              className="bg-surface border border-border p-6 hover:border-primary/50 transition-all group relative overflow-hidden flex flex-col"
+              key={project.title}
+              className="bg-surface border border-border p-6 hover:border-primary/50 transition-all rounded-xl flex flex-col gap-4"
             >
-              {/* Decorative Background Code */}
-              <div className="hidden lg:block absolute top-0 right-0 p-4 opacity-5 font-mono text-[10px] text-right pointer-events-none select-none z-0">
-                import &#123; {project.techStack[0]} &#125; from 'lib';
-                <br />
-                export default function App() &#123;
-                <br />
-                &nbsp;&nbsp;return &lt;div&gt;Hello&lt;/div&gt;
-                <br />
-                &#125;
-              </div>
-
-              {/* Project Image */}
-              <div className="relative w-full h-48 mb-4 overflow-hidden rounded border border-border/50 group-hover:border-primary/30 transition-colors z-10 bg-background shrink-0">
-
-                {project.imageUrl && !imageErrors[index] ? (
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="w-16 h-16 rounded-xl border border-border bg-background p-2 shrink-0">
                   <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    onError={() => handleImageError(index)}
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105"
+                    src={project.iconUrl}
+                    alt={`${project.title} icon`}
+                    className="w-full h-full object-contain"
                     loading="lazy"
                   />
-                ) : (
-                  <div className="w-full h-full bg-slate-800 flex items-center justify-center">
-                    <span className="font-mono text-xs text-slate-500">
-                      NO_PREVIEW_AVAILABLE
-                    </span>
-                  </div>
-                )}
-
-                <div className="absolute inset-0 bg-linear-to-t from-surface via-transparent to-transparent opacity-60 pointer-events-none"></div>
-              </div>
-
-              {/* Title + Links */}
-              <div className="flex justify-between items-start mb-2 z-10 relative">
-                <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-
-                <div className="flex gap-4 bg-surface/80 backdrop-blur-sm p-1 rounded-lg">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-white p-1"
-                    aria-label="GitHub Repo"
-                  >
-                    <Github size={20} />
-                  </a>
-
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-white p-1"
-                      aria-label="Live Demo"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                  )}
                 </div>
+                <h3 className="text-lg sm:text-xl font-bold text-white break-words">{project.title}</h3>
               </div>
 
-              {/* Description */}
-              <p className="text-slate-400 mb-4 text-sm leading-relaxed z-10 relative flex-1">
+              <p className="text-slate-400 text-sm leading-relaxed flex-1">
                 {project.description}
               </p>
 
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 z-10 relative mt-auto">
+              <div className="flex flex-wrap gap-x-3 gap-y-2">
                 {project.techStack.map((tech) => (
                   <span key={tech} className="text-xs font-mono text-secondary">
                     #{tech}
                   </span>
                 ))}
+              </div>
+
+              <div className="flex flex-wrap gap-3 pt-1">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-mono px-3 py-2 rounded-md border border-border text-slate-300 hover:text-white hover:border-primary/50 transition-colors"
+                >
+                  <Github size={16} />
+                  GitHub
+                </a>
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-mono px-3 py-2 rounded-md border border-border text-slate-300 hover:text-white hover:border-primary/50 transition-colors"
+                  >
+                    <ExternalLink size={16} />
+                    Live
+                  </a>
+                )}
               </div>
             </div>
           ))}

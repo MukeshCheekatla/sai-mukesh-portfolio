@@ -27,7 +27,7 @@ const Education = () => {
                 </div>
               </div>
 
-              <div className="mt-4 md:mt-0 text-right">
+              <div className="mt-4 md:mt-0 text-left md:text-right">
                 <div className="font-mono text-primary">{edu.duration}</div>
                 <div className="text-sm text-secondary mt-1 font-mono">
                   GPA: {edu.gpa}

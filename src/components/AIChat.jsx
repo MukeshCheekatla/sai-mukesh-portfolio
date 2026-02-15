@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Terminal, ChevronRight, Minimize2 } from 'lucide-react';
+import { X, Terminal, ChevronRight, Minimize2 } from 'lucide-react';
 import { getChatbotResponse } from '../utils/chatbot.js';
 
 const AIChat = () => {
@@ -48,10 +48,10 @@ const AIChat = () => {
   };
 
   return (
-    <div className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 flex flex-col items-end font-mono">
+    <div className="fixed bottom-20 md:bottom-6 left-4 right-4 md:left-auto md:right-6 z-50 flex flex-col items-end font-mono">
       
       {isOpen && (
-        <div className="mb-4 w-[calc(100vw-2rem)] md:w-[400px] max-h-[60vh] md:max-h-[500px] bg-background border border-primary/50 shadow-2xl shadow-primary/10 flex flex-col h-[500px] animate-fade-in-up">
+        <div className="mb-4 w-full md:w-[400px] h-[65vh] max-h-[65vh] md:h-[500px] md:max-h-[500px] bg-background border border-primary/50 shadow-2xl shadow-primary/10 flex flex-col animate-fade-in-up">
           
           {/* Terminal Header */}
           <div className="bg-surface border-b border-primary/30 p-2 flex justify-between items-center select-none shrink-0">
@@ -77,7 +77,7 @@ const AIChat = () => {
                 <span className={msg.role === 'user' ? 'text-blue-400 shrink-0' : 'text-primary shrink-0'}>
                   {msg.role === 'user' ? '>' : '$'}
                 </span>
-                <span className="text-slate-300 leading-relaxed whitespace-pre-wrap wrap-break-word">
+                <span className="text-slate-300 leading-relaxed whitespace-pre-wrap break-words">
                   {msg.text}
                 </span>
               </div>

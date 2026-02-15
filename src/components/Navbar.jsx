@@ -101,6 +101,7 @@ const Navbar = () => {
           <a
             href="#home"
             onClick={(e) => handleScroll(e, '#home')}
+            aria-label="Home"
             className="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-primary active:text-primary transition-colors cursor-pointer"
           >
             <Home size={20} />
@@ -113,6 +114,7 @@ const Navbar = () => {
               key={item.label}
               href={item.href}
               onClick={(e) => handleScroll(e, item.href)}
+              aria-label={item.label}
               className="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-primary active:text-primary transition-colors cursor-pointer"
             >
               {icons[item.label]}

@@ -23,15 +23,15 @@ const About = () => {
             </p>
           ))}
 
-          <div className="grid grid-cols-2 gap-4 mt-8 font-mono text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 font-mono text-sm">
             <div className="p-4 border border-border bg-surface/50">
               <span className="block text-secondary mb-1">Location</span>
-              <span className="text-white">India</span>
+              <span className="text-white">{RESUME_DATA.location}</span>
             </div>
 
             <div className="p-4 border border-border bg-surface/50">
               <span className="block text-secondary mb-1">Experience</span>
-              <span className="text-white">Junior Level</span>
+              <span className="text-white">Entry Level</span>
             </div>
 
             <div className="p-4 border border-border bg-surface/50">
