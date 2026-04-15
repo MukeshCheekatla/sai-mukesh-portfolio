@@ -78,6 +78,33 @@ const Projects = () => {
                     Live
                   </a>
                 )}
+
+                {/* Platform Icons */}
+                {project.platforms && (
+                  <div className="flex items-center gap-2 ml-auto sm:ml-0">
+                    {project.platforms.map((platform) => {
+                      const url = new URL(platform.url);
+                      const domain = url.hostname;
+                      
+                      return (
+                        <a
+                          key={platform.name}
+                          href={platform.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:scale-110 transition-transform p-1.5 bg-background rounded-md border border-border/50 hover:border-primary/50"
+                          title={`Available on ${platform.name}`}
+                        >
+                          <img
+                            src={`https://www.google.com/s2/favicons?domain=${domain}&sz=32`}
+                            alt={platform.name}
+                            className="w-5 h-5 brightness-110 transition-all"
+                          />
+                        </a>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             </div>
           ))}

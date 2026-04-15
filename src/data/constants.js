@@ -1,5 +1,6 @@
 import mailCheckerIcon from "../assets/mail-checker-icon.png";
 import fresherFlowIcon from "../assets/fresherflow.png";
+import stopAccessIcon from "../assets/stopaccess-icon.jpg";
 
 const DEFAULT_RESUME_LINK = "https://drive.google.com/file/d/1MAF2qQT7htw_HOrfX494a70M44AeTr90/view?usp=sharing";
 const RESUME_LINK = import.meta.env.VITE_RESUME_URL?.trim() || DEFAULT_RESUME_LINK;
@@ -27,7 +28,7 @@ I've also worked with machine learning during my AI & ML internship, giving me e
 export const SKILLS = [
   {
     category: "Frontend",
-    skills: ["React", "Vite", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS"]
+    skills: ["React", "Vite", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Chart.js"]
   },
   {
     category: "Backend",
@@ -54,7 +55,12 @@ export const PROJECTS = [
     techStack: ["JavaScript", "HTML", "CSS", "Browser Extension APIs", "OAuth 2.0"],
     githubUrl: "https://github.com/MukeshCheekatla/Mail-Checker-for-Zoho",
     liveUrl: "https://mail-checker-for-zoho.pages.dev/",
-    iconUrl: mailCheckerIcon
+    iconUrl: mailCheckerIcon,
+    platforms: [
+      { name: "chrome", url: "https://chromewebstore.google.com/detail/mail-checker-for-zoho/affjmfagkgljcidafnkhhjfaaiidincj" },
+      { name: "edge", url: "https://microsoftedge.microsoft.com/addons/detail/mail-checker-for-zoho/eomndclhhjdkfophfbigbklfkmlgjehp" },
+      { name: "firefox", url: "https://addons.mozilla.org/en-US/firefox/addon/mail-checker-for-zoho/" }
+    ]
   },
   {
     title: "FresherFlow",
@@ -64,6 +70,18 @@ export const PROJECTS = [
     githubUrl: "https://github.com/MukeshCheekatla/FresherFlow",
     liveUrl: "http://fresherflow.in/",
     iconUrl: fresherFlowIcon
+  },
+  {
+    title: "StopAccess",
+    description:
+      "A high-performance website and app blocker with browser-level enforcement, NextDNS synchronization, scheduling, focus sessions, and productivity analytics.",
+    techStack: ["TypeScript", "React", "Tailwind CSS", "Chart.js", "Chrome Extension APIs"],
+    githubUrl: "https://github.com/MukeshCheekatla/StopAccess",
+    liveUrl: "https://mukeshcheekatla.github.io/StopAccess/",
+    iconUrl: stopAccessIcon,
+    platforms: [
+      { name: "chrome", url: "https://chromewebstore.google.com/detail/stopaccess-website-app-bl/dajibamebijnlohkeddaignbneobpjag" }
+    ]
   }
 ];
 
